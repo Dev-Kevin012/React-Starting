@@ -7,26 +7,31 @@ function App() {
     {
       name: "Food",
       price: "Rs 10",
-      LocationOfExpenditure: "Mc Donalds",
+      location: "Mc Donalds",
+      date: new Date(),
     },
     {
       name: "Petrol",
       price: "Rs 100",
-      LocationOfExpenditure: "Bharat Petroleums",
+      location: "Bharat Petroleums",
+      date: new Date(),
     },
     {
       name: "Movies",
       price: "Rs 200",
-      LocationOfExpenditure: "Hind Inox",
+      location: "Hind Inox",
+      date: new Date(),
     },
   ];
   return (
     <section>
-      {expenseItems.map((expense) => (
+      {expenseItems.map((expense, i) => (
         <ExpenseItem
+          key={i}
           name={expense.name}
           price={expense.price}
-          LocationOfExpenditure={expense.LocationOfExpenditure}
+          date={expense.date}
+          location={expense.location}
         />
       ))}
     </section>

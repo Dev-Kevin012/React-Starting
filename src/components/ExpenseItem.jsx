@@ -1,14 +1,13 @@
 import React from "react";
 import "./ExpenseItem.css";
+import ExpenseDetails from "./ExpenseDetails";
+import ExpenseDate from "./ExpenseDate";
 
-const ExpenseItem = ({ name, price, LocationOfExpenditure }) => {
+const ExpenseItem = ({ name, price, location, date }) => {
   return (
     <div className="expense-item">
-      <div className="expense-item__description">
-        <h2>{name}</h2>
-        <div className="expense-item__location">{LocationOfExpenditure}</div>
-        <div className="expense-item__price">{price}</div>
-      </div>
+      <ExpenseDetails price={price} location={location} name={name} />
+      <ExpenseDate date={date} />
     </div>
   );
 };
